@@ -11,8 +11,12 @@ class _DemoState extends State<Demo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Demo page"),),
-      body: Center(child: Text("Demo page"),),
+      appBar: AppBar(
+        title: const Text("Demo page"),
+      ),
+      body: const Center(
+        child: Text("Demo page"),
+      ),
     );
   }
 }
