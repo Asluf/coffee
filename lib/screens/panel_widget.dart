@@ -117,7 +117,7 @@ class _PanelWidgetState extends State<PanelWidget> {
               // ),
               Container(
                 margin: const EdgeInsets.all(10),
-                padding: EdgeInsets.all(10),
+                padding: const EdgeInsets.all(10),
                 width: (wid - 150) / 3,
                 height: 80,
                 decoration: BoxDecoration(
@@ -127,7 +127,7 @@ class _PanelWidgetState extends State<PanelWidget> {
                     color: const Color.fromARGB(255, 209, 203, 203),
                   ),
                 ),
-                child: Image(
+                child: const Image(
                   image: AssetImage('resources/motorbike.png'),
                   width: 70,
                   height: 70,
@@ -173,18 +173,18 @@ class _PanelWidgetState extends State<PanelWidget> {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
+                const Text(
                   "Johan Hawn",
                   style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
                 ),
-                SizedBox(height: 11),
+                const SizedBox(height: 11),
                 Text(
                   "Personal Courier",
                   style: TextStyle(fontSize: 14, color: Colors.grey[500]),
                 ),
               ],
             ),
-            Spacer(),
+            const Spacer(),
             Container(
               width: 60,
               height: 60,

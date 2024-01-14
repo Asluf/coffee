@@ -8,7 +8,6 @@ class Home extends StatefulWidget {
 }
 
 class _Home1State extends State<Home> {
-  int _currentIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -139,7 +138,7 @@ class _Home1State extends State<Home> {
                     const SizedBox(
                       height: 20.0,
                     ),
-                    SingleChildScrollView(
+                    const SingleChildScrollView(
                       scrollDirection: Axis.horizontal,
                       child: Row(
                         children: [
@@ -187,31 +186,36 @@ class _Home1State extends State<Home> {
                               children: [
                                 // image
                                 Stack(children: [
-                                  Container(
-                                    height: 120,
-                                    alignment: Alignment.topRight,
-                                    width: double.infinity,
-                                    padding: const EdgeInsets.all(8),
-                                    decoration: BoxDecoration(
-                                        image: DecorationImage(
-                                      image:
-                                          AssetImage(ProductList[index].Image),
-                                      fit: BoxFit.cover,
-                                    )),
+                                  GestureDetector(
+                                    onTap: () {
+                                      Navigator.pushNamed(context, '/detail');
+                                    },
+                                    child: Container(
+                                      height: 120,
+                                      alignment: Alignment.topRight,
+                                      width: double.infinity,
+                                      padding: const EdgeInsets.all(8),
+                                      decoration: BoxDecoration(
+                                          image: DecorationImage(
+                                        image: AssetImage(
+                                            ProductList[index].Image),
+                                        fit: BoxFit.cover,
+                                      )),
+                                    ),
                                   ),
                                   Padding(
                                     padding: const EdgeInsets.all(5.0),
                                     child: Positioned(
                                       child: Row(
                                         children: [
-                                          Icon(Icons.star,
+                                          const Icon(Icons.star,
                                               color: Color.fromARGB(
                                                   220, 255, 235, 59),
                                               size: 13),
                                           Text(
                                             " ${ProductList[index].Rate}",
-                                            style:
-                                                TextStyle(color: Colors.white),
+                                            style: const TextStyle(
+                                                color: Colors.white),
                                           )
                                         ],
                                       ),
@@ -254,17 +258,14 @@ class _Home1State extends State<Home> {
                                               backgroundColor:
                                                   const Color.fromRGBO(
                                                       199, 124, 78, 1),
-                                              fixedSize: const Size(35, 35),
-                                              minimumSize: const Size(35, 35),
-                                              maximumSize: const Size(35, 35),
+                                              minimumSize: const Size(5, 40),
                                               shape: RoundedRectangleBorder(
                                                 borderRadius:
                                                     BorderRadius.circular(10.0),
                                               ),
                                             ),
-                                            child: Align(
-                                              alignment: Alignment.center,
-                                              child: const Icon(
+                                            child: const Center(
+                                              child: Icon(
                                                 Icons.add,
                                                 color: Colors.white,
                                                 size: 15,
@@ -297,7 +298,8 @@ class CustomButton extends StatelessWidget {
   final String text;
   final bool isActive;
 
-  CustomButton({
+  const CustomButton({
+    super.key,
     required this.text,
     this.isActive = false,
   });
@@ -356,14 +358,14 @@ List<Product> ProductList = [
   Product(
     Name: 'Cappucino',
     Description: "with Oat Milk",
-    Image: "resources/Rectangle 1706.png",
+    Image: "resources/coffee2.jpeg",
     Price: 3.90,
     Rate: 4.9,
   ),
   Product(
     Name: 'Cappucino',
     Description: "Sample",
-    Image: "resources/Rectangle 1706.png",
+    Image: "resources/coffee3.jpeg",
     Price: 220.00,
     Rate: 4.5,
   ),

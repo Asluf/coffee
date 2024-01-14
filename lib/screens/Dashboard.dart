@@ -1,4 +1,5 @@
 import 'package:coffee/screens/Home.dart';
+import 'package:coffee/screens/under_process.dart';
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 
@@ -12,9 +13,9 @@ class Dashboard extends StatefulWidget {
 class _DashboardState extends State<Dashboard> {
   final pages = [
     Home(),
-    const Placeholder(),
-    const Placeholder(),
-    const Placeholder(),
+    const UnderProcess(),
+    const UnderProcess(),
+    const UnderProcess(),
   ];
   int currentIndex = 0;
   @override

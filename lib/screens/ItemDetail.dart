@@ -28,12 +28,12 @@ class _ItemDetailState extends State<ItemDetail> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         IconButton(
-                          icon: Icon(Icons.arrow_back_ios),
+                          icon: const Icon(Icons.arrow_back_ios),
                           onPressed: () {
                             Navigator.of(context).pop();
                           },
                         ),
-                        Text(
+                        const Text(
                           'Detail',                          
                           style: TextStyle(
                             fontSize: 20,
@@ -77,8 +77,8 @@ class _ItemDetailState extends State<ItemDetail> {
               ),
             ),
             
-            Padding(
-              padding: const EdgeInsets.all(16.0),
+            const Padding(
+              padding: EdgeInsets.all(16.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -92,20 +92,20 @@ class _ItemDetailState extends State<ItemDetail> {
               padding: const EdgeInsets.all(16.0),
               child: Row(              
                 children: [
-                  Icon(Icons.star, color: Colors.amber,),
+                  const Icon(Icons.star, color: Colors.amber,),
                   Text.rich(
                     TextSpan(
                       children: [
                         TextSpan(text: '4.8', style: Theme.of(context).textTheme.bodyLarge),
                         const TextSpan(text: '(230)'),
                       ])),
-                   SizedBox(width: 180),   
+                   const SizedBox(width: 180),   
                    Container(
                         height: 40,  
                         width: 40,   
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(8),
-                          color: Color.fromARGB(255, 243, 240, 240), 
+                          color: const Color.fromARGB(255, 243, 240, 240), 
                         ),
                         child: Center(
                           child: Image.asset(
@@ -120,12 +120,12 @@ class _ItemDetailState extends State<ItemDetail> {
 
                    
                    Container(
-                    margin: EdgeInsets.only(left: 15),
+                    margin: const EdgeInsets.only(left: 15),
                         height: 40,  
                         width: 40,  
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(8),
-                          color: Color.fromARGB(255, 243, 240, 240), 
+                          color: const Color.fromARGB(255, 243, 240, 240), 
                         ),
                         child: Center(
                           child: Image.asset(
@@ -140,13 +140,13 @@ class _ItemDetailState extends State<ItemDetail> {
               ),
             ),
 
-            Divider(
+            const Divider(
                     color: Colors.grey,
                     thickness: 1,
                     
                   ),
-            Padding(
-              padding: const EdgeInsets.all(16.0),
+            const Padding(
+              padding: EdgeInsets.all(16.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -163,8 +163,8 @@ class _ItemDetailState extends State<ItemDetail> {
               ),
             ),          
             
-            Padding(
-              padding: const EdgeInsets.all(16.0),
+            const Padding(
+              padding: EdgeInsets.all(16.0),
               child: Text(
                 'Size',
                 style: TextStyle(
@@ -185,12 +185,12 @@ class _ItemDetailState extends State<ItemDetail> {
               ],
             ),
 
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
                         
             Row(
               children: [
-                Padding(
-                  padding: const EdgeInsets.all(16.0),
+                const Padding(
+                  padding: EdgeInsets.all(16.0),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -201,17 +201,19 @@ class _ItemDetailState extends State<ItemDetail> {
                     ],
                   ),
                 ),
-                SizedBox(width: 50), 
+                const SizedBox(width: 50), 
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/order');
+                  },
                   style: ElevatedButton.styleFrom(
-                    primary: Color.fromRGBO(199, 124, 78, 1),
-                    minimumSize: Size(250, 60),
+                    primary: const Color.fromRGBO(199, 124, 78, 1),
+                    minimumSize: const Size(250, 60),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(15),
                     ),
                   ),
-                  child: Text(
+                  child: const Text(
                     'Buy Now',
                     style: TextStyle(fontSize: 18,fontFamily: "Calibri"),
                   ),
@@ -232,7 +234,7 @@ class _ItemDetailState extends State<ItemDetail> {
         });
     },
     style: ElevatedButton.styleFrom(
-      primary: selectedSize == size ? Color.fromRGBO(245, 207, 184, 1) : Colors.white, 
+      primary: selectedSize == size ? const Color.fromRGBO(245, 207, 184, 1) : Colors.white, 
       onPrimary: Colors.black, 
       minimumSize: Size(buttonWidth, 50.0), 
     ),
