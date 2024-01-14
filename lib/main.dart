@@ -17,6 +17,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       title: 'Cofee With IT',
+      theme: ThemeData(
+          bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+            selectedItemColor: Color.fromRGBO(199, 124, 78, 1),
+          ),
+          primaryColor: Color.fromRGBO(199, 124, 78, 1),
+      ),
       debugShowCheckedModeBanner: false,
       home: Delivery(),
     );
