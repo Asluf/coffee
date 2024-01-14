@@ -12,6 +12,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     final double scrWidth = MediaQuery.of(context).size.width;
+    final double scrHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       body: Stack(
         children: [
@@ -25,7 +26,7 @@ class _HomeScreenState extends State<HomeScreen> {
             fit: BoxFit.cover,
           ),
           Positioned.fill(
-            top: 525,
+            top: scrHeight * 0.56,
             child: Center(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -61,6 +62,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       )
                     ],
                   ),
+                  Spacer(),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -87,7 +89,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Container(
-                        margin: const EdgeInsets.fromLTRB(20, 0, 20, 20),
+                        margin: const EdgeInsets.fromLTRB(20, 0, 20, 30),
                         child: ElevatedButton(
                           style: ButtonStyle(
                             backgroundColor: const MaterialStatePropertyAll(

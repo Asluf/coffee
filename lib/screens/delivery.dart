@@ -17,7 +17,7 @@ class _DeliveryState extends State<Delivery> {
     return Scaffold(
       body: SlidingUpPanel(
         minHeight: hei * 0.2,
-        maxHeight: hei * 0.45,
+        maxHeight: hei * 0.49,
         // parallaxEnabled: true,
         // parallaxOffset: 0.5,
         borderRadius: const BorderRadius.vertical(top: Radius.circular(18)),
