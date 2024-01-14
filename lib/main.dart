@@ -1,3 +1,6 @@
+import 'package:coffee/screens/Dashboard.dart';
+import 'package:coffee/screens/Home.dart';
+import 'package:coffee/screens/Home.dart';
 import 'package:coffee/screens/demo.dart';
 import 'package:flutter/material.dart';
 import 'package:device_preview/device_preview.dart';
@@ -16,7 +19,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      home: const Demo(),
+      theme: ThemeData(
+          bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+            selectedItemColor: Color.fromRGBO(199, 124, 78, 1),
+          ),
+          primaryColor: Color.fromRGBO(199, 124, 78, 1)),
+      //home: const Demo(),
+      home: Dashboard(),
     );
   }
 }
