@@ -21,14 +21,16 @@ class _DashboardState extends State<Dashboard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: PageView(
-          children: pages,
-          onPageChanged: (index) {
-            setState(() {
-              currentIndex = index;
-            });
-          },
-        ),
+        // body: PageView(
+        //   children: pages,
+        //   onPageChanged: (index) {
+        //     print("Page changed to index $index");
+        //     setState(() {
+        //       currentIndex = index;
+        //     });
+        //   },
+        // ),
+        body: pages[currentIndex],
         bottomNavigationBar: BottomNavigationBar(
             currentIndex: currentIndex,
             onTap: (index) {

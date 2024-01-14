@@ -8,10 +8,10 @@ import 'package:device_preview/device_preview.dart';
 
 void main() {
   runApp(
-    //const MyApp()
-    DevicePreview(
-      builder: (context) => const MyApp(),
-    ),
+    const MyApp(),
+    // DevicePreview(
+    //   builder: (context) => const MyApp(),
+    // ),
   );
 }
 
@@ -29,6 +29,7 @@ class MyApp extends StatelessWidget {
       ),
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
+      // home: HomeScreen()
       routes: {
         '/': (context) => const HomeScreen(),
         '/dash': (context) => const Dashboard(),

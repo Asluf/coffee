@@ -1,3 +1,4 @@
+import 'package:coffee/screens/ItemDetail.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -10,6 +11,8 @@ class Home extends StatefulWidget {
 class _Home1State extends State<Home> {
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+
     return Scaffold(
       body: SingleChildScrollView(
         child: Stack(
@@ -66,7 +69,7 @@ class _Home1State extends State<Home> {
                             ),
                           ],
                         ),
-                        const SizedBox(width: 150),
+                        const Spacer(),
                         Column(
                             crossAxisAlignment: CrossAxisAlignment.end,
                             children: [
@@ -124,7 +127,7 @@ class _Home1State extends State<Home> {
                             child: Row(children: [
                               Container(
                                 height: 150,
-                                width: 340,
+                                width: screenWidth - 50,
                                 decoration: BoxDecoration(
                                   color: const Color.fromARGB(255, 72, 69, 69),
                                   borderRadius: BorderRadius.circular(8),
@@ -157,18 +160,18 @@ class _Home1State extends State<Home> {
                         crossAxisCount: 2,
                         crossAxisSpacing: 15,
                         mainAxisSpacing: 15,
-                        childAspectRatio: 0.72,
+                        childAspectRatio: 0.65,
                       ),
                       itemCount: ProductList.length,
                       itemBuilder: (BuildContext context, int index) {
                         // returning the cart
                         return GestureDetector(
                           onTap: () {
-                            // Navigator.push(
-                            //   context,
-                            //   MaterialPageRoute(
-                            //       builder: (context) => ReviewProposal(proposalList: proposalList)),
-                            // );
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const ItemDetail()),
+                            );
                           },
                           child: Card(
                             clipBehavior: Clip.antiAlias, //clip the edges
@@ -187,9 +190,9 @@ class _Home1State extends State<Home> {
                                 // image
                                 Stack(children: [
                                   GestureDetector(
-                                    onTap: () {
-                                      Navigator.pushNamed(context, '/detail');
-                                    },
+                                    // onTap: () {
+                                    //   Navigator.pushNamed(context, '/detail');
+                                    // },
                                     child: Container(
                                       height: 120,
                                       alignment: Alignment.topRight,
@@ -203,24 +206,21 @@ class _Home1State extends State<Home> {
                                       )),
                                     ),
                                   ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(5.0),
-                                    child: Positioned(
-                                      child: Row(
-                                        children: [
-                                          const Icon(Icons.star,
-                                              color: Color.fromARGB(
-                                                  220, 255, 235, 59),
-                                              size: 13),
-                                          Text(
-                                            " ${ProductList[index].Rate}",
-                                            style: const TextStyle(
-                                                color: Colors.white),
-                                          )
-                                        ],
-                                      ),
+                                  Positioned(
+                                    child: Row(
+                                      children: [
+                                        const Icon(Icons.star,
+                                            color: Color.fromARGB(
+                                                220, 255, 235, 59),
+                                            size: 13),
+                                        Text(
+                                          " ${ProductList[index].Rate}",
+                                          style: const TextStyle(
+                                              color: Colors.white),
+                                        )
+                                      ],
                                     ),
-                                  )
+                                  ),
                                 ]),
                                 Padding(
                                   padding:
