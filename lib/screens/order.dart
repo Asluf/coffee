@@ -44,12 +44,7 @@ class _OrderState extends State<Order> {
               children: [
                 GestureDetector(
                   onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (BuildContext context) => const Order(),
-                      ),
-                    );
+                    Navigator.pop(context);
                   },
                   child: const Icon(Icons.arrow_back_ios),
                 ),
@@ -70,10 +65,10 @@ class _OrderState extends State<Order> {
             Row(
               children: [
                 Expanded(
-                  child: buildTabButton('Delivary', 0, Size(80, 40)),
+                  child: buildTabButton('Delivary', 0, const Size(80, 40)),
                 ),
                 Expanded(
-                  child: buildTabButton('Pickup', 1, Size(80, 40)),
+                  child: buildTabButton('Pickup', 1, const Size(80, 40)),
                 ),
               ],
             ),
@@ -95,7 +90,7 @@ class _OrderState extends State<Order> {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            const SizedBox(height: 5),
+            const SizedBox(height: 8),
             const Text(
               'Kpg sutoyo No 620, Bilzen Tanjungbalai',
               style: TextStyle(
@@ -130,47 +125,47 @@ class _OrderState extends State<Order> {
                         const Size(150.0, 30.0)),
                     maximumSize: MaterialStateProperty.all<Size>(
                         const Size(150.0, 30.0)),
-                    backgroundColor: MaterialStatePropertyAll(Colors.white),
+                    backgroundColor:
+                        const MaterialStatePropertyAll(Colors.white),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 9,
                 ),
-                Container(
-                  child: ElevatedButton.icon(
-                    onPressed: () {
-                      print('Add Node Pressed!');
-                    },
-                    icon: const Icon(
-                      Icons.add_box_outlined,
-                      size: 15,
+                ElevatedButton.icon(
+                  onPressed: () {
+                    print('Add Node Pressed!');
+                  },
+                  icon: const Icon(
+                    Icons.add_box_outlined,
+                    size: 15,
+                  ),
+                  label: const Text(
+                    'Add Node',
+                    style: TextStyle(
+                      fontSize: 15,
+                      color: Colors.black,
                     ),
-                    label: const Text(
-                      'Add Node',
-                      style: TextStyle(
-                        fontSize: 15,
-                        color: Colors.black,
-                      ),
-                    ),
-                    style: ButtonStyle(
-                      fixedSize: MaterialStateProperty.all<Size>(
-                          const Size(150.0, 30.0)),
-                      minimumSize: MaterialStateProperty.all<Size>(
-                          const Size(150.0, 30.0)),
-                      maximumSize: MaterialStateProperty.all<Size>(
-                          const Size(150.0, 30.0)),
-                      backgroundColor: MaterialStatePropertyAll(Colors.white),
-                    ),
+                  ),
+                  style: ButtonStyle(
+                    fixedSize: MaterialStateProperty.all<Size>(
+                        const Size(150.0, 30.0)),
+                    minimumSize: MaterialStateProperty.all<Size>(
+                        const Size(150.0, 30.0)),
+                    maximumSize: MaterialStateProperty.all<Size>(
+                        const Size(150.0, 30.0)),
+                    backgroundColor:
+                        const MaterialStatePropertyAll(Colors.white),
                   ),
                 ),
               ],
             ),
-            const SizedBox(height: 5),
+            const SizedBox(height: 10),
             const Divider(
               color: Color.fromARGB(255, 207, 204, 204),
               thickness: 1.0,
             ),
-            Container(
+            SizedBox(
               height: 70,
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -186,34 +181,30 @@ class _OrderState extends State<Order> {
                     ),
                   ),
                   const SizedBox(width: 15.0),
-                  Column(
+                  const Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Container(
-                        child: const Text(
-                          'Cappuccino',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                          ),
+                      Text(
+                        'Cappuccino',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
-                      Container(
-                        child: const Text(
-                          'With chocolate',
-                          style: TextStyle(
-                            color: Color.fromARGB(255, 204, 200, 200),
-                            fontSize: 10,
-                            fontWeight: FontWeight.bold,
-                          ),
+                      Text(
+                        'With chocolate',
+                        style: TextStyle(
+                          color: Color.fromARGB(255, 204, 200, 200),
+                          fontSize: 10,
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
                     ],
                   ),
-                  Spacer(),
-                  Container(
+                  const Spacer(),
+                  SizedBox(
                     height: 70,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -229,7 +220,7 @@ class _OrderState extends State<Order> {
                         const SizedBox(width: 1.0),
                         Text(
                           '$_selectedNumber',
-                          style: TextStyle(fontWeight: FontWeight.bold),
+                          style: const TextStyle(fontWeight: FontWeight.bold),
                         ),
                         const SizedBox(width: 1.0),
                         IconButton(
@@ -246,7 +237,7 @@ class _OrderState extends State<Order> {
                 ],
               ),
             ),
-            SizedBox(height: 2),
+            const SizedBox(height: 2),
             const Divider(
               color: Color.fromARGB(255, 207, 204, 204),
               thickness: 2.0,
@@ -353,30 +344,26 @@ class _OrderState extends State<Order> {
               endIndent: 20.0,
             ),
             const SizedBox(height: 18),
-            Container(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Container(
-                    margin: const EdgeInsets.only(left: 18.0),
-                    child: const Text(
-                      'Total Payment',
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
-                    ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Container(
+                  margin: const EdgeInsets.only(left: 18.0),
+                  child: const Text(
+                    'Total Payment',
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
                   ),
-                  Container(
-                    margin: const EdgeInsets.only(right: 20.0),
-                    child: const Text(
-                      '\$ 70.53',
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
-                    ),
+                ),
+                Container(
+                  margin: const EdgeInsets.only(right: 20.0),
+                  child: const Text(
+                    '\$ 70.53',
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 35,
             ),
             Row(
@@ -402,35 +389,37 @@ class _OrderState extends State<Order> {
                               // Add your button press logic here
                             },
                             style: ElevatedButton.styleFrom(
-                              primary: Color(0xFFC67C4E),
+                              primary: const Color(0xFFC67C4E),
                               onPrimary: Colors.white,
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(12.0),
                               ),
-                              padding: EdgeInsets.symmetric(horizontal: 10.0),
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 10.0),
                             ),
-                            child: Text(
+                            child: const Text(
                               'Cash',
                               style: TextStyle(fontSize: 12.0),
                             )),
                       ),
                       Container(
-                        margin:
-                            EdgeInsets.only(left: 0), // Set left margin to 0
+                        margin: const EdgeInsets.only(
+                            left: 0), // Set left margin to 0
 
                         child: ElevatedButton(
                           onPressed: () {
                             // Add your button press logic here
                           },
                           style: ElevatedButton.styleFrom(
-                            primary: Color(0xFFF6F6F6),
+                            primary: const Color(0xFFF6F6F6),
                             onPrimary: Colors.black,
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(12.0),
                             ),
-                            padding: EdgeInsets.symmetric(horizontal: 10.0),
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 10.0),
                           ),
-                          child: Text(
+                          child: const Text(
                             '\$ 5.63',
                             style: TextStyle(fontSize: 12.0),
                           ),
@@ -439,7 +428,7 @@ class _OrderState extends State<Order> {
                     ],
                   ),
                 ),
-                CircleAvatar(
+                const CircleAvatar(
                   radius: 15, // Set your desired radius
 
                   backgroundColor: Color(0xFF808080),
@@ -453,42 +442,33 @@ class _OrderState extends State<Order> {
               ],
             ),
             const SizedBox(height: 20),
-            Container(
-              child: ElevatedButton(
-                onPressed: () {
-                  print('Order Button Pressed!');
-                },
-                child: const Text(
-                  'Order',
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20,
-                      color: Colors.white),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/delivery');
+              },
+              style: ButtonStyle(
+                minimumSize: MaterialStateProperty.all<Size>(
+                  const Size(400.0, 80.0),
                 ),
-                style: ButtonStyle(
-                  minimumSize: MaterialStateProperty.all<Size>(
-                    const Size(400.0, 80.0),
-                  ),
-                  backgroundColor: MaterialStateProperty.all<Color>(
-                    const Color(0xFFC67C4E),
-                  ),
-                  shape: MaterialStateProperty.all<OutlinedBorder>(
-                    RoundedRectangleBorder(
-                      side: const BorderSide(
-                        color: Color.fromARGB(248, 250, 249, 249),
-                      ),
-                      borderRadius: BorderRadius.circular(20.0),
+                backgroundColor: MaterialStateProperty.all<Color>(
+                  const Color(0xFFC67C4E),
+                ),
+                shape: MaterialStateProperty.all<OutlinedBorder>(
+                  RoundedRectangleBorder(
+                    side: const BorderSide(
+                      color: Color.fromARGB(248, 250, 249, 249),
                     ),
+                    borderRadius: BorderRadius.circular(20.0),
                   ),
                 ),
               ),
-            ),
-            const SizedBox(height: 10),
-            const Divider(
-              color: Color.fromARGB(255, 207, 204, 204),
-              thickness: 5.0,
-              indent: 100.0,
-              endIndent: 100.0,
+              child: const Text(
+                'Order',
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                    color: Colors.white),
+              ),
             ),
           ],
         ),
@@ -507,7 +487,7 @@ class _OrderState extends State<Order> {
         backgroundColor: MaterialStateProperty.all<Color>(
           _selectedTabIndex == index
               ? const Color(0xFFC67C4E)
-              : Color.fromARGB(255, 230, 226, 226),
+              : const Color.fromARGB(255, 230, 226, 226),
         ),
 
         shape: MaterialStateProperty.all<RoundedRectangleBorder>(
