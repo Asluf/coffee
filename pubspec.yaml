@@ -31,6 +31,9 @@ flutter:
     - resources/profile_picture.png
     - resources/Home_page.png
     - resources/Rectangle 1706.png
+    - assets/Rectangle.png
+    - assets/dollar.png
+    - assets/discount.png
 
   # fonts:
   #   - family: Schyler
