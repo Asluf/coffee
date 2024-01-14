@@ -8,6 +8,7 @@ class ItemDetail extends StatefulWidget {
 }
 
 class _ItemDetailState extends State<ItemDetail> {
+  String selectedSize = 'M';
   bool isFavorite = false;
 
   @override
@@ -37,6 +38,7 @@ class _ItemDetailState extends State<ItemDetail> {
                           style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
+                            fontFamily: "Calibri",
                           ),
                         ),
                         Positioned(
@@ -80,7 +82,7 @@ class _ItemDetailState extends State<ItemDetail> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('Cappucino', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),         
+                  Text('Cappucino', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold,fontFamily: "Calibri")),         
                   Text('with Chocolate'),
                 ],
               ),
@@ -97,8 +99,43 @@ class _ItemDetailState extends State<ItemDetail> {
                         TextSpan(text: '4.8', style: Theme.of(context).textTheme.bodyLarge),
                         const TextSpan(text: '(230)'),
                       ])),
-                  // Image.asset('Frame 19.png'),
-                  // Image.asset('Frame 20.png')
+                   SizedBox(width: 180),   
+                   Container(
+                        height: 40,  
+                        width: 40,   
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8),
+                          color: Color.fromARGB(255, 243, 240, 240), 
+                        ),
+                        child: Center(
+                          child: Image.asset(
+                            'coffee-seed.png',
+                            height: 30, 
+                            width: 30,   
+                            fit: BoxFit.contain,  
+                          ),
+                        ),
+                      ),
+
+
+                   
+                   Container(
+                    margin: EdgeInsets.only(left: 15),
+                        height: 40,  
+                        width: 40,  
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8),
+                          color: Color.fromARGB(255, 243, 240, 240), 
+                        ),
+                        child: Center(
+                          child: Image.asset(
+                            'coffee-bag.png',
+                            height: 30,  
+                            width: 30,  
+                            fit: BoxFit.contain,  
+                          ),
+                        ),
+                      ),
                 ],
               ),
             ),
@@ -115,13 +152,13 @@ class _ItemDetailState extends State<ItemDetail> {
                 children: [
                   Text(
                     'Description',
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, fontFamily: "Calibri"),
                   ),
                                     
                   SizedBox(height: 8), 
                   Text(
                     'A cappuccino is an approximately 150 ml (5oz) beverage, with 25 ml of espresso coffee and 85 ml of fresh milk the fo..'),
-                  Text('Read more', style: TextStyle(color: Color.fromARGB(255, 233, 142, 6)),),
+                  Text('Read more', style: TextStyle(color: Color.fromRGBO(199, 124, 78, 1),fontFamily: "Calibri"),),
                 ],
               ),
             ),          
@@ -131,7 +168,7 @@ class _ItemDetailState extends State<ItemDetail> {
               child: Text(
                 'Size',
                 style: TextStyle(
-                  
+                  fontFamily: "Calibri",
                   fontSize: 18, 
                   fontWeight: FontWeight.bold,
                 ),
@@ -159,7 +196,7 @@ class _ItemDetailState extends State<ItemDetail> {
                     children: [
                       Text('Price'),
                       Text("\$ 4.53", 
-                      style: TextStyle(fontSize: 18, color: Color.fromARGB(255, 233, 142, 6),),
+                      style: TextStyle(fontSize: 18, color: Color.fromRGBO(199, 124, 78, 1),),
                       )
                     ],
                   ),
@@ -168,7 +205,7 @@ class _ItemDetailState extends State<ItemDetail> {
                 ElevatedButton(
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(
-                    primary: Color.fromARGB(255, 233, 142, 6),
+                    primary: Color.fromRGBO(199, 124, 78, 1),
                     minimumSize: Size(250, 60),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(15),
@@ -176,7 +213,7 @@ class _ItemDetailState extends State<ItemDetail> {
                   ),
                   child: Text(
                     'Buy Now',
-                    style: TextStyle(fontSize: 18),
+                    style: TextStyle(fontSize: 18,fontFamily: "Calibri"),
                   ),
                 ),
               ],
@@ -189,9 +226,13 @@ class _ItemDetailState extends State<ItemDetail> {
 
   Widget _buildSizeButton(String size, {double buttonWidth = 120.0}) {
   return ElevatedButton(
-    onPressed: () {},
+    onPressed: () {
+      setState(() {
+          selectedSize = size;
+        });
+    },
     style: ElevatedButton.styleFrom(
-      primary: Colors.white, 
+      primary: selectedSize == size ? Color.fromRGBO(245, 207, 184, 1) : Colors.white, 
       onPrimary: Colors.black, 
       minimumSize: Size(buttonWidth, 50.0), 
     ),
