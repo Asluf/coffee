@@ -96,8 +96,28 @@ class _PanelWidgetState extends State<PanelWidget> {
           ),
           child: Row(
             children: [
+              // Container(
+              //   margin: const EdgeInsets.all(10),
+              //   padding: EdgeInsets.all(10),
+              //   width: (wid - 150) / 3,
+              //   height: 80,
+              //   decoration: BoxDecoration(
+              //     borderRadius: BorderRadius.circular(20),
+              //     border: Border.all(
+              //       width: 1,
+              //       color: const Color.fromARGB(255, 209, 203, 203),
+              //     ),
+              //     image: const DecorationImage(
+              //         image: AssetImage(
+              //           'resources/motorbike.png',
+              //         ),
+
+              //         fit: BoxFit.contain),
+              //   ),
+              // ),
               Container(
                 margin: const EdgeInsets.all(10),
+                padding: EdgeInsets.all(10),
                 width: (wid - 150) / 3,
                 height: 80,
                 decoration: BoxDecoration(
@@ -107,8 +127,14 @@ class _PanelWidgetState extends State<PanelWidget> {
                     color: const Color.fromARGB(255, 209, 203, 203),
                   ),
                 ),
-                child: const Icon(Icons.bike_scooter_outlined),
+                child: Image(
+                  image: AssetImage('resources/motorbike.png'),
+                  width: 70,
+                  height: 70,
+                  fit: BoxFit.contain,
+                ),
               ),
+
               Expanded(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -134,15 +160,15 @@ class _PanelWidgetState extends State<PanelWidget> {
         Row(
           children: [
             Container(
-              width: 70,
-              height: 70,
-              margin: EdgeInsets.fromLTRB(0, 0, 20, 0),
+              width: 65,
+              height: 65,
+              margin: const EdgeInsets.fromLTRB(0, 0, 20, 0),
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10), color: Colors.green),
-              child: Image.asset(
-                'resources/asf.PNG',
-                fit: BoxFit.cover,
-              ),
+                  borderRadius: BorderRadius.circular(15),
+                  color: Colors.green,
+                  image: const DecorationImage(
+                      image: AssetImage('resources/asf.PNG'),
+                      fit: BoxFit.cover)),
             ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,

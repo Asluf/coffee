@@ -23,6 +23,7 @@ flutter:
   assets:
     - resources/mapss.png
     - resources/asf.PNG
+    - resources/motorbike.png
 
   # fonts:
   #   - family: Schyler

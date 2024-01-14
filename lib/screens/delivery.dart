@@ -39,7 +39,9 @@ class _DeliveryState extends State<Delivery> {
           top: 55.0,
           left: 35.0,
           child: ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pop(context);
+            },
             style: ButtonStyle(
               backgroundColor: const MaterialStatePropertyAll(
                   Color.fromARGB(255, 255, 255, 255)),
